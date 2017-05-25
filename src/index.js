@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Nav from './components/Nav';
+import { EventEmitter } from 'events';
 import Screen1 from './screens/Screen1';
 import Screen2 from './screens/Screen2';
 import Screen3 from './screens/Screen3';
@@ -14,7 +16,15 @@ class App extends Component {
     }
   }
 
-  updateScreen(newScreenIndex) {
+  componentWillMount() {
+    this.eventEmitter = new EventEmitter()
+
+    this.eventEmitter.addListener("navigateScreen", ({screenIndex}) =>  {
+      this.updateScreen({newScreenIndex: screenIndex})
+    })
+  }
+
+  updateScreen({newScreenIndex}) {
     this.setState({screenIndex: newScreenIndex})
   }
 
@@ -38,18 +48,7 @@ render() {
       <div className="app-header">
       </div>
       <div className="app-wrapper">
-        <div className="app-nav">
-          <div className={this.state.screenIndex === 1 ? "nav-item screen1 active-nav" : "nav-item screen1"} onClick={() => {this.updateScreen(1)}}>
-            <p>Screen 1</p>
-            </div>
-          <div className={this.state.screenIndex === 2 ? "nav-item screen2 active-nav" : "nav-item screen1"} onClick={() => {this.updateScreen(2)}}>
-            <p>Screen 2</p>
-            </div>
-          <div className={this.state.screenIndex === 3 ? "nav-item screen3 active-nav" : "nav-item screen1"} onClick={() => {this.updateScreen(3)}}>
-            <p>Screen 3</p>
-          </div>
-
-        </div>
+        <Nav eventEmitter={this.eventEmitter} screenIndex={this.state.screenIndex} />
         <div className="main-content">
           {ActiveScreen}
         </div>
