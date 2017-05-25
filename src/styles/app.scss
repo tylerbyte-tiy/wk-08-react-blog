@@ -29,11 +29,23 @@ body {
       height: 60px;
       background-color: coral;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: yellow;
+      }
     }
   }
 
   .main-content {
     flex: 1;
     background-color: gray;
+
+    .screen {
+      margin: 10px;
+    }
   }
 }

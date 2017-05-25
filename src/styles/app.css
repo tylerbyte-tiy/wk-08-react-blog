@@ -24,9 +24,17 @@ body {
     .app-wrapper .app-nav .nav-item {
       height: 60px;
       background-color: coral;
-      cursor: pointer; }
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .app-wrapper .app-nav .nav-item:hover {
+        background-color: yellow; }
   .app-wrapper .main-content {
     flex: 1;
     background-color: gray; }
+    .app-wrapper .main-content .screen {
+      margin: 10px; }
 
 /*# sourceMappingURL=app.css.map */
