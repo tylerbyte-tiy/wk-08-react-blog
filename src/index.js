@@ -14,6 +14,10 @@ class App extends Component {
     }
   }
 
+  updateScreen(newScreenIndex) {
+    this.setState({screenIndex: newScreenIndex})
+  }
+
 render() {
   var ActiveScreen
 
@@ -35,13 +39,13 @@ render() {
       </div>
       <div className="app-wrapper">
         <div className="app-nav">
-          <div className="nav-item screen1" onClick={() => {this.setState({screenIndex: 1})}}>
+          <div className={this.state.screenIndex === 1 ? "nav-item screen1 active-nav" : "nav-item screen1"} onClick={() => {this.updateScreen(1)}}>
             <p>Screen 1</p>
             </div>
-          <div className="nav-item screen2" onClick={() => {this.setState({screenIndex: 2})}}>
+          <div className={this.state.screenIndex === 2 ? "nav-item screen2 active-nav" : "nav-item screen1"} onClick={() => {this.updateScreen(2)}}>
             <p>Screen 2</p>
             </div>
-          <div className="nav-item screen3" onClick={() => {this.setState({screenIndex: 3})}}>
+          <div className={this.state.screenIndex === 3 ? "nav-item screen3 active-nav" : "nav-item screen1"} onClick={() => {this.updateScreen(3)}}>
             <p>Screen 3</p>
           </div>
 
