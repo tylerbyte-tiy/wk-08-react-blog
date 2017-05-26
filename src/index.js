@@ -28,38 +28,38 @@ class App extends Component {
     this.setState({screenIndex: newScreenIndex})
   }
 
-render() {
-  var ActiveScreen
+  render() {
+    var ActiveScreen
 
-  if(this.state.screenIndex === 1) {
-    ActiveScreen = <Screen1 />
-  }
+    if(this.state.screenIndex === 1) {
+      ActiveScreen = <Screen1 />
+    }
 
-  if(this.state.screenIndex === 2) {
-    ActiveScreen = <Screen2 />
-  }
+    if(this.state.screenIndex === 2) {
+      ActiveScreen = <Screen2 />
+    }
 
-  if(this.state.screenIndex === 3) {
-    ActiveScreen = <Screen3 />
-  }
+    if(this.state.screenIndex === 3) {
+      ActiveScreen = <Screen3 />
+    }
 
-  return(
-    <div className="app">
-      <div className="app-header">
-      </div>
-      <div className="app-wrapper">
-        <Nav eventEmitter={this.eventEmitter} screenIndex={this.state.screenIndex} />
-        <div className="main-content">
-          {ActiveScreen}
+    return(
+      <div className="app">
+        <div className="app-header">
+        </div>
+        <div className="app-wrapper">
+          <Nav eventEmitter={this.eventEmitter} screenIndex={this.state.screenIndex} />
+          <div className="main-content">
+            {ActiveScreen}
+          </div>
         </div>
       </div>
-    </div>
-  )
-}
-}
+    )
+  }
+  }
 
-ReactDOM.render(
-  <App>
-    <h1>Message</h1>
-</App>,
-  document.getElementById('root'));
+  ReactDOM.render(
+    <App>
+      <h1>Message</h1>
+  </App>,
+    document.getElementById('root'));

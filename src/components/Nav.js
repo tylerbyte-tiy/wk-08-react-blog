@@ -14,15 +14,15 @@ constructor(props) {
       <div className="app-nav">
 
         <div className={this.props.screenIndex === 1 ? "nav-item screen1 active-nav" : "nav-item screen1"} onClick={(event) => {this.props.eventEmitter.emit("navigateScreen", {screenIndex: 1})}}>
-          <p>Screen 1</p>
+          <p>Blog</p>
           </div>
 
         <div className={this.props.screenIndex === 2 ? "nav-item screen2 active-nav" : "nav-item screen2"} onClick={(event) => {this.props.eventEmitter.emit("navigateScreen", {screenIndex: 2})}}>
-          <p>Screen 2</p>
+          <p>About</p>
           </div>
 
         <div className={this.props.screenIndex === 3 ? "nav-item screen3 active-nav" : "nav-item screen3"} onClick={(event) => {this.props.eventEmitter.emit("navigateScreen", {screenIndex: 3})}}>
-          <p>Screen 3</p>
+          <p>Recommended Links</p>
         </div>
 
       </div>
