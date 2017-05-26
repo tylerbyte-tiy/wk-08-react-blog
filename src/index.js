@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './components/Nav';
+import Footer from './components/footer';
 import { EventEmitter } from 'events';
 import Screen1 from './screens/Screen1';
 import Screen2 from './screens/Screen2';
@@ -53,6 +54,7 @@ class App extends Component {
             {ActiveScreen}
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
